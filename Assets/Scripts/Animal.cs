@@ -2,11 +2,17 @@ using UnityEngine;
 using UnityEngine.AI;
     
 [RequireComponent(typeof(Rigidbody), typeof(NavMeshAgent))]
+
+// Abstract base class for animals with wandering behavior
 public abstract class Animal : MonoBehaviour
 {
     public Rigidbody rb;
+   
+    // Encapsulation of NavMeshAgent
     protected NavMeshAgent agent;
-
+   
+    
+    // Encapsulation of movement parameters
     [SerializeField] protected float moveSpeed = 1f;
     [SerializeField] protected float rotationSpeed = 75f; // degrees per second used by RotateTowards
     [SerializeField] private float wanderRadius = 10f;
@@ -14,6 +20,7 @@ public abstract class Animal : MonoBehaviour
 
     private float wanderTimer;
 
+    // Enabling polymorphism for child classes
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,72 +28,66 @@ public abstract class Animal : MonoBehaviour
 
         if (agent != null)
         {
-            // let the agent drive position but we handle Y-axis rotation manually
+            // Let the NavMeshAgent handle rotation automatically 
             agent.updatePosition = true;
-            agent.updateRotation = false;
-            agent.updateUpAxis = true;
+            agent.updateRotation = true;
             agent.speed = moveSpeed;
             agent.angularSpeed = rotationSpeed;
             agent.acceleration = 2f;
         }
 
-        wanderTimer = Random.Range(0f, wanderInterval);
+        // start with immediate destination pick
+        wanderTimer = 0f;
         PickNewDestination();
     }
 
     protected virtual void Update()
     {
-        if (agent == null)
+        Move();
+    }
+
+
+    // Abstraction of movement logic
+    protected void Move() { 
+          if (agent == null)
             return;
 
-        // Update agent speed in case inspector changed it at runtime
+        
         agent.speed = moveSpeed;
 
         wanderTimer -= Time.deltaTime;
 
-        // If timer expired or agent reached destination, pick a new random destination
-        if (wanderTimer <= 0f || (!agent.pathPending && agent.remainingDistance <= 0.5f))
+        // pick new destination when timer expires or agent reached current goal
+        bool reached = !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
+        if (wanderTimer <= 0f || reached)
         {
             PickNewDestination();
-            wanderTimer = wanderInterval;
-        }
-
-        // Rotate on Y axis to face movement direction
-        Vector3 horizontalVelocity = agent.velocity;
-        horizontalVelocity.y = 0f;
-
-        if (horizontalVelocity.sqrMagnitude > 0.0001f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(horizontalVelocity);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    wanderTimer = wanderInterval;
         }
     }
 
     private void PickNewDestination()
+{
+    if (RandomNavmeshLocation(transform.position, wanderRadius, out Vector3 samplePos))
     {
-        Vector3 samplePos;
-        if (RandomNavmeshLocation(transform.position, wanderRadius, out samplePos))
+        agent.SetDestination(samplePos);
+    }
+}
+
+private bool RandomNavmeshLocation(Vector3 origin, float radius, out Vector3 result)
+{
+    for (int i = 0; i < 30; i++)
+    {
+        Vector3 randomPoint = origin + Random.insideUnitSphere * radius;
+        if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, 2.0f, NavMesh.AllAreas))
         {
-            agent.SetDestination(samplePos);
+            result = hit.position;
+            return true;
         }
     }
 
-    private bool RandomNavmeshLocation(Vector3 origin, float radius, out Vector3 result)
-    {
-        for (int i = 0; i < 30; i++) // try a few times to find a valid sample
-        {
-            Vector3 randomPoint = origin + Random.insideUnitSphere * radius;
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(randomPoint, out hit, 2.0f, NavMesh.AllAreas))
-            {
-                result = hit.position;
-                return true;
-            }
-        }
-
-        // fallback to current position
-        result = transform.position;
-        return false;
-    }
+    result = transform.position;
+    return false;
+}
 }
 

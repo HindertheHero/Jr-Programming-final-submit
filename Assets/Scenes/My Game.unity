@@ -1092,32 +1092,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
   m_PrefabInstance: {fileID: 1603833226}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &147232265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147232264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
-  speed: 0
-  stoppingDistance: 25
-  rotationSpeed: 8
-  wanderRadius: 5
-  wanderInterval: 2
-  wanderSpeed: 2
-  useKinematicWhileWandering: 1
-  jump: 3
-  moveSpeed: 2
-  rotationJitterDegrees: 20
-  maxForwardSpeed: 3
-  jumpForce: 3
-  minJumpInterval: 5
-  maxJumpInterval: 7
 --- !u!4 &147232268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471710, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
@@ -1144,11 +1118,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &151053576 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-  m_PrefabInstance: {fileID: 764100532}
+--- !u!114 &147232272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147232264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!114 &147232273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147232264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!195 &147232274
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147232264}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &166973176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
@@ -1433,10 +1464,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 686016846}
+      addedObject: {fileID: 686016850}
     - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 686016850}
+      addedObject: {fileID: 686016853}
+    - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 686016854}
+    - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 686016855}
   m_SourcePrefab: {fileID: 100100000, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
 --- !u!4 &196675967 stripped
 Transform:
@@ -1648,10 +1685,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2123555268}
+      addedObject: {fileID: 2123555272}
     - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2123555272}
+      addedObject: {fileID: 2123555275}
+    - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2123555276}
+    - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2123555277}
   m_SourcePrefab: {fileID: 100100000, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
 --- !u!4 &237545126 stripped
 Transform:
@@ -1876,32 +1919,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
   m_PrefabInstance: {fileID: 1489246662}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &269181421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269181420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
-  speed: 0
-  stoppingDistance: 25
-  rotationSpeed: 8
-  wanderRadius: 5
-  wanderInterval: 2
-  wanderSpeed: 2
-  useKinematicWhileWandering: 1
-  jump: 3
-  moveSpeed: 2
-  rotationJitterDegrees: 20
-  maxForwardSpeed: 3
-  jumpForce: 3
-  minJumpInterval: 5
-  maxJumpInterval: 7
 --- !u!4 &269181424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 450808, guid: c7ca0992ba00761469f731111e56b107, type: 3}
@@ -1928,6 +1945,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &269181428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269181420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!195 &269181429
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269181420}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &274609012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 638dc165572d2a84081d13ce1afb4d52, type: 3}
@@ -5086,32 +5145,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
   m_PrefabInstance: {fileID: 193688541}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &686016846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686016845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
-  speed: 0
-  stoppingDistance: 25
-  rotationSpeed: 8
-  wanderRadius: 5
-  wanderInterval: 2
-  wanderSpeed: 2
-  useKinematicWhileWandering: 1
-  jump: 3
-  moveSpeed: 2
-  rotationJitterDegrees: 20
-  maxForwardSpeed: 3
-  jumpForce: 3
-  minJumpInterval: 5
-  maxJumpInterval: 7
 --- !u!4 &686016849 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471710, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
@@ -5138,6 +5171,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &686016853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686016845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!114 &686016854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686016845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!195 &686016855
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686016845}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &686589089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5441,6 +5536,7 @@ GameObject:
   - component: {fileID: 731157967}
   - component: {fileID: 731157966}
   - component: {fileID: 731157965}
+  - component: {fileID: 731157969}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -5544,6 +5640,38 @@ Transform:
   - {fileID: 316009823}
   m_Father: {fileID: 1858004462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &731157969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731157964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 0.17, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 66909b14b52319243be3218c5463d5ad, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!4 &732038971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 638dc165572d2a84081d13ce1afb4d52, type: 3}
@@ -5694,67 +5822,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 638dc165572d2a84081d13ce1afb4d52, type: 3}
---- !u!1001 &764100532
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1858004462}
-    m_Modifications:
-    - target: {fileID: 7317731327648692240, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_Name
-      value: MountainSkybox
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 123.69114
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -221.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317731328111405690, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5f0963a629b97442587b7f3ece766e42, type: 3}
 --- !u!1001 &764565433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11128,10 +11195,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 269181421}
+      addedObject: {fileID: 269181425}
     - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 269181425}
+      addedObject: {fileID: 269181428}
+    - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 269181429}
   m_SourcePrefab: {fileID: 100100000, guid: c7ca0992ba00761469f731111e56b107, type: 3}
 --- !u!1001 &1500043926
 PrefabInstance:
@@ -12088,32 +12158,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
   m_PrefabInstance: {fileID: 1817641494}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1592494628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592494627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
-  speed: 0
-  stoppingDistance: 25
-  rotationSpeed: 8
-  wanderRadius: 5
-  wanderInterval: 2
-  wanderSpeed: 2
-  useKinematicWhileWandering: 1
-  jump: 3
-  moveSpeed: 2
-  rotationJitterDegrees: 20
-  maxForwardSpeed: 3
-  jumpForce: 3
-  minJumpInterval: 5
-  maxJumpInterval: 7
 --- !u!4 &1592494631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 450808, guid: c7ca0992ba00761469f731111e56b107, type: 3}
@@ -12140,6 +12184,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1592494635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592494627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!114 &1592494636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592494627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!195 &1592494637
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592494627}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1603833226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12210,10 +12316,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 147232265}
+      addedObject: {fileID: 147232269}
     - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 147232269}
+      addedObject: {fileID: 147232272}
+    - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 147232273}
+    - targetCorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 147232274}
   m_SourcePrefab: {fileID: 100100000, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
 --- !u!4 &1608530596 stripped
 Transform:
@@ -13930,32 +14042,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
   m_PrefabInstance: {fileID: 1975837743}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1773798448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773798447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
-  speed: 0
-  stoppingDistance: 25
-  rotationSpeed: 8
-  wanderRadius: 5
-  wanderInterval: 2
-  wanderSpeed: 2
-  useKinematicWhileWandering: 1
-  jump: 3
-  moveSpeed: 2
-  rotationJitterDegrees: 20
-  maxForwardSpeed: 3
-  jumpForce: 3
-  minJumpInterval: 5
-  maxJumpInterval: 7
 --- !u!4 &1773798451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 450808, guid: c7ca0992ba00761469f731111e56b107, type: 3}
@@ -13982,6 +14068,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1773798455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773798447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!195 &1773798456
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773798447}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1780662274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14421,7 +14549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 450808, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.52039
+      value: 10.224
       objectReference: {fileID: 0}
     - target: {fileID: 450808, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14429,7 +14557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 450808, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.6991253
+      value: -7.213
       objectReference: {fileID: 0}
     - target: {fileID: 450808, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14465,10 +14593,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1592494628}
+      addedObject: {fileID: 1592494632}
     - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1592494632}
+      addedObject: {fileID: 1592494635}
+    - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1592494636}
+    - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1592494637}
   m_SourcePrefab: {fileID: 100100000, guid: c7ca0992ba00761469f731111e56b107, type: 3}
 --- !u!4 &1818701458 stripped
 Transform:
@@ -15008,7 +15142,6 @@ Transform:
   - {fileID: 1939140614}
   - {fileID: 510107319}
   - {fileID: 5553955}
-  - {fileID: 151053576}
   - {fileID: 731157968}
   - {fileID: 1263616386}
   m_Father: {fileID: 0}
@@ -15471,32 +15604,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
   m_PrefabInstance: {fileID: 1977469128}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1924697131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924697130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
-  speed: 0
-  stoppingDistance: 25
-  rotationSpeed: 8
-  wanderRadius: 5
-  wanderInterval: 2
-  wanderSpeed: 2
-  useKinematicWhileWandering: 1
-  jump: 3
-  moveSpeed: 2
-  rotationJitterDegrees: 20
-  maxForwardSpeed: 3
-  jumpForce: 3
-  minJumpInterval: 5
-  maxJumpInterval: 7
 --- !u!4 &1924697134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 450808, guid: c7ca0992ba00761469f731111e56b107, type: 3}
@@ -15523,6 +15630,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1924697138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924697130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!114 &1924697139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924697130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!195 &1924697140
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924697130}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1939140613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e22ffa38d50944f4db2e894c177c419d, type: 3}
@@ -15770,10 +15939,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1773798448}
+      addedObject: {fileID: 1773798452}
     - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1773798452}
+      addedObject: {fileID: 1773798455}
+    - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1773798456}
   m_SourcePrefab: {fileID: 100100000, guid: c7ca0992ba00761469f731111e56b107, type: 3}
 --- !u!1001 &1976093634
 PrefabInstance:
@@ -15907,10 +16079,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1924697131}
+      addedObject: {fileID: 1924697135}
     - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1924697135}
+      addedObject: {fileID: 1924697138}
+    - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1924697139}
+    - targetCorrespondingSourceObject: {fileID: 112640, guid: c7ca0992ba00761469f731111e56b107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1924697140}
   m_SourcePrefab: {fileID: 100100000, guid: c7ca0992ba00761469f731111e56b107, type: 3}
 --- !u!4 &1980742054 stripped
 Transform:
@@ -17932,32 +18110,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 127534, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
   m_PrefabInstance: {fileID: 221246876}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2123555268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123555267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
-  speed: 0
-  stoppingDistance: 25
-  rotationSpeed: 8
-  wanderRadius: 5
-  wanderInterval: 2
-  wanderSpeed: 2
-  useKinematicWhileWandering: 1
-  jump: 3
-  moveSpeed: 2
-  rotationJitterDegrees: 20
-  maxForwardSpeed: 3
-  jumpForce: 3
-  minJumpInterval: 5
-  maxJumpInterval: 7
 --- !u!4 &2123555271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471710, guid: 3fe800c166ae0d04881a20247bde736d, type: 3}
@@ -17984,6 +18136,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2123555275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123555267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!114 &2123555276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123555267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1679f2be14b3fc54e9621aca09345abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::chickenwalk
+  rb: {fileID: 0}
+  moveSpeed: 5
+  rotationSpeed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  jump: 5
+  minJumpInterval: 1
+  maxJumpInterval: 6
+--- !u!195 &2123555277
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123555267}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &2126091113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ad3119cbd6dce024e8460ef32dec49df, type: 3}
